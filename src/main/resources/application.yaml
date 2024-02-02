@@ -1,0 +1,60 @@
+server:
+  port: 9090
+
+initializr:
+  dependencies:
+    - name: Structure
+      content:
+        - id: ddd
+          name: DDD
+          starter: false
+          description: "Generate a structured application with a domain driven design: \n
+          - Domain module\n
+          - Application module\n
+          - Infrastructure module\n"
+    - name: Spring
+      content:
+        - name: Web
+          id: web
+          description: Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  boot-versions:
+    - id: 3.2.2
+      default: true
+  env:
+    maven:
+      parent:
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-parent
+        version: 3.2.2
+  types:
+    - name: Maven Project
+      id: maven-project
+      description: Generate a Maven based project archive
+      tags:
+        build: maven
+        format: project
+      default: true
+      action: /starter.zip
+    - name: Gradle Project
+      id: gradle-project
+      description: Generate a Gradle based project archive
+      tags:
+        build: gradle
+        format: project
+      default: false
+      action: /starter.zip
+  packagings:
+    - name: Jar
+      id: jar
+      default: true
+  javaVersions:
+    - id: 17
+      default: true
+  languages:
+    - name: Java
+      id: java
+      default: true
+  group-id:
+    value: dev.grigolli
+  version:
+    value: 1.0.0-SNAPSHOT

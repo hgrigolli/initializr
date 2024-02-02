@@ -1,0 +1,13 @@
+package {{package}}.application;
+
+import {{package}}.domain.Identifier;
+import {{package}}.domain.exceptions.NotFoundException;
+
+import java.util.function.Supplier;
+
+public interface NotFoundable {
+
+    default Supplier<NotFoundException> notFound(final Identifier anIdentifier) {
+        return () -> NotFoundException.with(anIdentifier.getClass(), anIdentifier);
+    }
+}

@@ -1,0 +1,3 @@
+io.spring.initializr.generator.project.ProjectGenerationConfiguration=\
+dev.grigolli.initializr.generator.common.CommonSpringBootConfiguration,\
+dev.grigolli.initializr.generator.files.ddd.DDDConfiguration
