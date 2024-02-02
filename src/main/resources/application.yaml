@@ -3,7 +3,7 @@ server:
 
 initializr:
   dependencies:
-    - name: Structure
+    - name: DDD Structure
       content:
         - id: ddd
           name: DDD
@@ -12,6 +12,12 @@ initializr:
           - Domain module\n
           - Application module\n
           - Infrastructure module\n"
+    - name: IBM MQ
+      content:
+        - id: ibmmq
+          name: IBM MQ
+          starter: false
+          description: "Generate a project configured for IBM MQ"
     - name: Spring
       content:
         - name: Web
@@ -27,14 +33,6 @@ initializr:
         artifactId: spring-boot-starter-parent
         version: 3.2.2
   types:
-    - name: Maven Project
-      id: maven-project
-      description: Generate a Maven based project archive
-      tags:
-        build: maven
-        format: project
-      default: true
-      action: /starter.zip
     - name: Gradle Project
       id: gradle-project
       description: Generate a Gradle based project archive
